@@ -1,17 +1,15 @@
-/*
-START:
-  Initialize ports (LCD, Keypad, LEDs)
-  Display "Enter Passcode"
-
-MAIN_LOOP:
-  Wait for 4 key presses (store in memory)
-  Compare input with stored passcode
-  If match → call UNLOCK
-  If not match → increment attempt count
-       If attempts < 3 → go back to MAIN_LOOP
-       If attempts == 3 → call LOCKDOWN
-  Repeat
-*/
+;START:
+;  Initialize ports (LCD, Keypad, LEDs)
+;  Display "Enter Passcode"
+;
+;MAIN_LOOP:
+;  Wait for 4 key presses (store in memory)
+;  Compare input with stored passcode
+;  If match → call UNLOCK
+;  If not match → increment attempt count
+;       If attempts < 3 → go back to MAIN_LOOP
+;       If attempts == 3 → call LOCKDOWN
+;  Repeat
 
 ; reserve memory for variables in SRAM:
 .def temp = r16
