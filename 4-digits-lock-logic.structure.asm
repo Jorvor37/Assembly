@@ -22,7 +22,7 @@ inputbuf: .byte 4       ; User input storage
 
 ; load the password
 ldi r16, 1
-sts passcode, r16
+sts passcode, r16       ; Store Direct to Data Space (It tells the CPU: “Take the value in register r16 and store it into the SRAM address labeled passcode.”)
 ldi r16, 2
 sts passcode+1, r16
 ldi r16, 3
@@ -33,7 +33,7 @@ sts passcode+3, r16
 ; set up I/O
 ; PORTC – Keypad: lower nibble output (rows), upper nibble input (cols)
 ldi temp, 0x0F
-out DDRC, temp
+out DDRC, temp          ; Data Direction Register for Port C     Purpose: It sets whether each pin is an input (0) or output (1).
 
 ; PORTD – LCD control/data pins as output
 ldi temp, 0xFF
